@@ -1,0 +1,147 @@
+/* Stock Ticker Card Styles */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.ticker {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  width: 320px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, sans-serif;
+  border: 1px solid #eaeaea;
+  transition: box-shadow 0.3s ease;
+}
+
+.ticker:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.ticker > div {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticker > div:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.stock-name,
+.stock-symbol,
+.stock-price,
+.stock-time {
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.stock-name::before {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.stock-symbol::before {
+  margin-right: 8px;
+  color: #666;
+  font-weight: bold;
+}
+
+.stock-price::before {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.stock-time::before {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Label styling */
+.stock-name,
+.stock-symbol,
+.stock-price,
+.stock-time {
+  font-weight: 500;
+  color: #555;
+}
+
+/* Value styling */
+#stock-name,
+#stock-symbol,
+#stock-price,
+#stock-time {
+  font-weight: 600;
+  color: #222;
+  min-width: 120px;
+  text-align: right;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+#stock-name {
+  color: #1a73e8;
+}
+
+#stock-symbol {
+  color: #34a853;
+}
+
+#stock-price {
+  font-size: 18px;
+}
+
+#stock-time {
+  color: #5f6368;
+  font-family: "Courier New", monospace;
+}
+
+/* Animation for price updates */
+@keyframes priceUpdate {
+  0% {
+    background-color: #fffde7;
+  }
+  100% {
+    background-color: #f9f9f9;
+  }
+}
+
+.price-update {
+  animation: priceUpdate 1s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .ticker {
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .ticker > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #stock-name,
+  #stock-symbol,
+  #stock-price,
+  #stock-time {
+    min-width: unset;
+    width: 100%;
+    text-align: left;
+    margin-top: 4px;
+  }
+}
